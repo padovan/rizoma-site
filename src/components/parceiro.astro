@@ -1,0 +1,27 @@
+---
+import Container from "@components/container.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="w-full py-10 bg-rizoma-bege" style="position: relative; z-index: 10;">
+  <Container>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+      <div class="flex items-center gap-4">
+        <div class="bg-rizoma-green rounded-full p-3 shrink-0">
+          <Icon class="w-6 h-6 text-white" name="bx:bxs-briefcase" />
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-rizoma-green">Você é psicólogo(a) ou psiquiatra?</h3>
+          <p class="text-sm text-slate-600">Faça parte da nossa rede de profissionais qualificados.</p>
+        </div>
+      </div>
+      <a
+        href="https://forms.gle/n4G8TbvDZbmnJM7v6"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-2.5 bg-rizoma-green hover:bg-rizoma-green-lighter text-white font-semibold rounded-full transition-colors text-sm whitespace-nowrap">
+        Seja nosso parceiro
+      </a>
+    </div>
+  </Container>
+</div>
