@@ -1,68 +1,73 @@
 ---
-import { Picture } from "astro:assets";
-import heroImage from "assets/rizoma-logo-transparent.png";
-import waterImage from "assets/water.webp";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
-import { whatsappHelpers } from "@/config";
 ---
 
-<!-- Water background image - full width extending below -->
-<div
-  class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-80 pointer-events-none"
-  style={`background-image: url(${waterImage.src}); height: 100vh; top: 0;`}
-></div>
-
-<!-- Content overlay - full width extending below -->
-<div class="fixed inset-0 bg-white/20 pointer-events-none" style="height: 100vh; top: 0;"></div>
-
 <Container>
-<main
-  class="grid lg:grid-cols-2 place-items-center min-h-screen pt-0 pb-16 md:pt-0 md:pb-20 relative z-10 items-center">
+<main class="flex flex-col items-center pt-24 pb-16 md:pt-32 md:pb-20 relative z-10">
 
-  <div class="py-6 md:order-1 order-2 relative z-10 flex flex-col justify-center">
-    <Picture
-      src={heroImage}
-      alt="Instituto Rizoma de Saúde Integral - Logotipo representando cuidado multidisciplinar em saúde mental"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-      class="hidden md:block"
-    />
-    <div class="flex justify-center mt-4">
-      <Link
-        href={whatsappHelpers.getDefaultWhatsappUrl()}
-        target="_blank"
-        class="bg-rizoma-green-button hover:bg-green-500 inline-flex gap-1 items-center px-4 py-2 rounded-full text-white font-semibold transition-colors"
-        rel="noopener noreferrer">
-        <Icon class="text-white w-5 h-5" name="bx:bxl-whatsapp" />
-        Fale com a gente
-      </Link>
-    </div>
-  </div>
-  <div class="relative flex flex-col justify-center">
-    <div class="relative z-10">
-      <h1
-        class="text-3xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter">
-        Encontrar um bom profissional é o primeiro passo para cuidar de você
-      </h1>
-      <div class="flex  justify-center mt-4 inline-block bg-white text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
-        ATENDIMENTO ONLINE E PRESENCIAL
+  <span class="inline-block bg-white text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
+    ATENDIMENTO ONLINE E PRESENCIAL
+  </span>
+
+  <!-- Headline -->
+  <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-center max-w-4xl text-rizoma-green mt-6">
+    O profissional certo faz toda a diferença
+  </h1>
+
+  <p class="text-lg md:text-xl text-slate-600 text-center mt-4 max-w-2xl">
+    Nós encontramos o mais adequado para você.
+  </p>
+
+  <!-- Two pillars -->
+  <div class="grid md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
+
+    <!-- Pillar 1: Curated network -->
+    <div class="bg-rizoma-green rounded-2xl p-8 text-white flex flex-col items-center text-center">
+      <div class="bg-white/20 rounded-full p-4 mb-4">
+        <Icon class="w-10 h-10 text-white" name="bx:bxs-group" />
       </div>
-      <div class="bg-white/50 backdrop-blur-sm rounded-lg p-6 mt-4">
-        <p class="text-lg md:text-2xl text-slate-900 max-w-xl">
-          Nosso trabalho é realizado com a critério técnico, responsabilidade ética e sensibilidade clínica.
-          Selecionamos <strong>psicólogos(as)</strong> e <strong>psiquiatras</strong> qualificados e analisamos cada caso com atenção,
-          para indicar o profissional mais adequado às necessidades específicas de cada pessoa.
-          </p>
-        </div>
-        <p class="text-lg md:text-2xl mt-4 text-slate-900 max-w-xl" style="display: none;">
+      <h2 class="text-xl md:text-2xl font-bold mb-3">
+        Temos uma rede qualificada de profissionais
+      </h2>
+      <p class="text-white/85 text-base leading-relaxed">
+        Mantemos uma base criteriosa de psicólogos(as) e psiquiatras avaliados por nossa equipe quanto à formação, experiência clínica e alinhamento ético.
       </p>
-      <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      </div>
     </div>
+
+    <!-- Pillar 2: Personalized match -->
+    <div class="bg-rizoma-green-lighter rounded-2xl p-8 text-white flex flex-col items-center text-center">
+      <div class="bg-white/20 rounded-full p-4 mb-4">
+        <Icon class="w-10 h-10 text-white" name="bx:bxs-user-check" />
+      </div>
+      <h2 class="text-xl md:text-2xl font-bold mb-3">
+        Escolhemos o melhor para você
+      </h2>
+      <p class="text-white/85 text-base leading-relaxed">
+        Analisamos cada caso com atenção e indicamos o profissional mais adequado às necessidades específicas de cada pessoa.
+      </p>
+    </div>
+
   </div>
+
+  <!-- Supporting text -->
+  <div class="mt-10 max-w-2xl text-center">
+    <p class="text-base text-slate-600 leading-relaxed">
+      Nosso trabalho é realizado com critério técnico, responsabilidade ética e sensibilidade clínica.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-8">
+    <Link
+      href="https://forms.gle/XUzFRyVnbwB8AqQ39"
+      target="_blank"
+      class="bg-rizoma-green-button hover:bg-green-500 inline-flex gap-2 items-center px-6 py-3 rounded-full text-white font-semibold transition-colors text-lg"
+      rel="noopener noreferrer">
+      Fale com a gente
+    </Link>
+  </div>
+
 </main>
 </Container>
