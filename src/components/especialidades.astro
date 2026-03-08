@@ -4,42 +4,30 @@ import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
 import rizomaLogo from "assets/rizoma-logo-transparent.png";
 
-const especialidades = [
+const etapas = [
   {
-    title: "Medicina da Família Abrangente",
+    title: "Critério técnico rigoroso",
     description:
-      "Nossos médicos da família oferecem cuidado primário completo, desde prevenção e acompanhamento de rotina até o diagnóstico e tratamento de diversas condições.  Priorizamos a construção de um relacionamento médico-paciente duradouro, com foco na sua saúde integral.",
-    icon: "bx:bxs-heart", // Example icon - choose a relevant one
+      "Os profissionais indicados passam por avaliação criteriosa de Psicólogos(as) em com formação e percursos distintos. Selecionamos os profissionais que também seguem critérios rigorosos e técnicos quanto à formação, experiência clínica e alinhamento ético.",
+    icon: "bx:bxs-heart",
   },
   {
-    title: "Psiquiatria Personalizada",
+    title: "Curadoria especializada",
     description:
-      "Nossos psiquiatras realizam avaliações completas para identificar e tratar transtornos mentais, oferecendo acompanhamento medicamentoso individualizado e terapias.  Nosso objetivo é promover a saúde mental e o bem-estar emocional de cada paciente.",
-    icon: "bx:bxs-brain", // Example icon
+      "Não trabalhamos com indicações genéricas ou listas amplas. Atuamos por curadoria clínica, priorizando qualidade sobre quantidade.",
+    icon: "bx:bxs-brain",
   },
   {
-    title: "Psicologia Acolhedora",
+    title: "Personalização real",
     description:
-      "Nossos psicólogos oferecem terapias individuais, de casal e em grupo,  em um ambiente acolhedor e seguro.  Auxiliamos você a lidar com questões emocionais, comportamentais e de relacionamento, buscando o autoconhecimento e o desenvolvimento pessoal.",
-    icon: "bx:bxs-happy-alt", // Example icon
-  },
-    {
-    title: "Promoção da Saúde Integral",
-    description:
-      "No Instituto Rizoma, a saúde é vista de forma integral.  Além do tratamento, focamos na promoção da saúde e prevenção de doenças, através de orientações personalizadas e acompanhamento contínuo.  Queremos te ajudar a viver uma vida mais saudável e equilibrada.",
-    icon: "bx:bxs-plus-circle", // Example icon
+      "O encaminhamento não é automático. É pensado caso a caso pela equipe.",
+    icon: "bx:bxs-happy-alt",
   },
   {
-    title: "Equipe Multidisciplinar Integrada",
+    title: "Responsabilidade ética",
     description:
-      "Nossa equipe é formada por médicos, psiquiatras e psicólogos que trabalham de forma integrada e colaborativa.  Essa abordagem multidisciplinar garante um cuidado completo e abrangente, considerando todas as dimensões da sua saúde.",
-    icon: "bx:bxs-group", // Example icon
-  },
-  {
-    title: "Atendimento Humanizado e Personalizado",
-    description:
-      "Acreditamos que cada paciente é único e merece um atendimento individualizado e humanizado.  Nossa equipe se dedica a construir uma relação de confiança com você, oferecendo um cuidado atencioso e personalizado que atenda às suas necessidades específicas.",
-    icon: "bx:bxs-hand", // Example icon
+      "Seguimos as diretrizes dos Conselhos profissionais e respeitamos integralmente o sigilo e a confidencialidade.",
+    icon: "bx:bxs-hand",
   },
 ];
 ---
@@ -66,22 +54,13 @@ const especialidades = [
 <div class="mb-16">
 <div>
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Especialidades
+    Nossa Diferencial
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Oferecemos cuidado integral em saúde mental priorizando o acolhimento e a autonomia do indivíduo.
-
-    Nossos serviços incluem grupos terapêuticos e temáticos, psicoterapia individual, avaliação clínica e intervenção psiquiátrica para pessoas a partir dos 15 anos de idade.
-  </p>
-  <p class="text-lg mt-4 text-slate-600">
-    Nosso objetivo é desenvolver um plano terapêutico abrangente para cada paciente, focado no bem-estar e no desenvolvimento pessoal. 
-  </p>
- 
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid sm:grid-cols-2 md:grid-cols-2 mt-16 gap-16">
   {
-    especialidades.map((item) => (
+    etapas.map((item) => (
       <div class="flex gap-4 items-start">
         <div class="mt-1 bg-rizoma-green rounded-full  p-2 w-8 h-8 shrink-0">
           <Icon class="text-white bg-rizoma-green" name={item.icon} />
@@ -93,7 +72,6 @@ const especialidades = [
       </div>
     ))
   }
-</div>
 </div>
 </div>
 </Container>
