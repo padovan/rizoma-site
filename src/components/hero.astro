@@ -1,73 +1,58 @@
 ---
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { whatsappHelpers } from "@/config";
+
+const whatsappUrl = whatsappHelpers.getWhatsappUrl(
+  "Olá. Gostaria de mais informações sobre os serviços do Instituto Rizoma."
+);
 ---
 
+<div class="w-full bg-gradient-to-b from-white to-rizoma-bege relative z-10">
 <Container>
-<main class="flex flex-col items-center pt-24 pb-16 md:pt-32 md:pb-20 relative z-10">
+  <main class="grid gap-12 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr]">
 
-  <span class="inline-block bg-white text-rizoma-green border border-rizoma-green px-4 py-2 rounded-lg font-semibold text-sm">
-    ATENDIMENTO ONLINE
-  </span>
+    <div>
+      <h1 class="text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.1] text-rizoma-green">
+        O vínculo certo começa com o profissional certo.
+      </h1>
 
-  <!-- Headline -->
-  <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter text-center max-w-4xl text-rizoma-green mt-6">
-    O profissional certo faz toda a diferença
-  </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+        O Instituto Rizoma conecta você ao profissional de saúde mental certo — com
+        <strong class="font-semibold text-rizoma-green">curadoria clínica</strong>, não algoritmo
+        genérico.
+      </p>
 
-  <p class="text-lg md:text-xl text-slate-600 text-center mt-4 max-w-2xl">
-    Nós encontramos o mais adequado para você.
-  </p>
-
-  <!-- Two pillars -->
-  <div class="grid md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
-
-    <!-- Pillar 1: Curated network -->
-    <div class="bg-rizoma-green rounded-2xl p-8 text-white flex flex-col items-center text-center">
-      <div class="bg-white/20 rounded-full p-4 mb-4">
-        <Icon class="w-10 h-10 text-white" name="bx:bxs-group" />
+      <div class="mt-9">
+        <Link
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-rizoma-green-button hover:bg-green-500 inline-flex gap-2 items-center px-6 py-3 rounded-full text-white font-semibold transition-colors text-lg">
+          Entre em contato
+        </Link>
       </div>
-      <h2 class="text-xl md:text-2xl font-bold mb-3">
-        Temos uma rede qualificada de profissionais
-      </h2>
-      <p class="text-white/85 text-base leading-relaxed">
-        Mantemos uma base criteriosa de psicólogos(as) avaliados por nossa equipe quanto à formação, experiência clínica e alinhamento ético.
+
+      <p class="mt-5 text-sm text-slate-500">
+        Falar com a nossa equipe é gratuito. As sessões são pagas direto ao profissional.
       </p>
     </div>
 
-    <!-- Pillar 2: Personalized match -->
-    <div class="bg-rizoma-green-lighter rounded-2xl p-8 text-white flex flex-col items-center text-center">
-      <div class="bg-white/20 rounded-full p-4 mb-4">
-        <Icon class="w-10 h-10 text-white" name="bx:bxs-user-check" />
+    <!-- The promise, not the funnel: why the curation exists at all, which is
+         what a visitor arriving from an ad is actually weighing. -->
+    <aside class="lg:pt-10">
+      <div class="rounded-lg border border-rizoma-bege-stronger bg-white p-7 shadow-lg">
+        <h2 class="text-2xl leading-snug text-rizoma-green font-bold">
+          A curadoria existe para que você comece a sua jornada terapêutica com segurança.
+        </h2>
+        <div class="mt-6 h-px w-full bg-rizoma-bege-stronger"></div>
+        <p class="mt-5 leading-relaxed text-slate-600">
+          Selecionamos psicólogos(as) que respondem a critérios rigorosos quanto à formação,
+          experiência clínica e alinhamento ético.
+        </p>
       </div>
-      <h2 class="text-xl md:text-2xl font-bold mb-3">
-        Escolhemos o melhor para você
-      </h2>
-      <p class="text-white/85 text-base leading-relaxed">
-        Analisamos cada caso com atenção e indicamos o profissional mais adequado às necessidades específicas de cada pessoa.
-      </p>
-    </div>
+    </aside>
 
-  </div>
-
-  <!-- Supporting text -->
-  <div class="mt-10 max-w-2xl text-center">
-    <p class="text-base text-slate-600 leading-relaxed">
-      Nosso trabalho é realizado com critério técnico, responsabilidade ética e sensibilidade clínica.
-    </p>
-  </div>
-
-  <!-- CTA -->
-  <div class="mt-8">
-    <Link
-      href="https://forms.gle/XUzFRyVnbwB8AqQ39"
-      target="_blank"
-      class="bg-rizoma-green-button hover:bg-green-500 inline-flex gap-2 items-center px-6 py-3 rounded-full text-white font-semibold transition-colors text-lg"
-      rel="noopener noreferrer">
-      Fale com a gente
-    </Link>
-  </div>
-
-</main>
+  </main>
 </Container>
+</div>
