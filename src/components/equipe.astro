@@ -14,6 +14,7 @@ const teamMembers = [
     credentials: "(CRP 06/118379)",
     image: AnaCarolinaImg,
     alt: "Ana Carolina Simão - Psicóloga especializada em psicanálise contemporânea e saúde mental",
+    profileUrl: "/profissionais/ana-carolina",
     details: [
       "Formada em Psicologia com ênfase em Clínica pela PUC-Campinas, **Mestre em Ciências - Saúde Mental pela Unicamp**, possui 9 anos de experiência na clínica privada e no **trabalho com grupos** em instituições.",
       "Seu percurso também passa pelo aprimoramento em saúde mental (Instituto A Casa) com casos mais graves, cursos sobre psicanálise de grupo (Instituto Gerar de Psicanálise) e aperfeiçoamento em **psicanálise contemporânea.**",
@@ -48,137 +49,131 @@ const teamMembers = [
     ]
   }
 ];
+
+const bold = (text: string) => text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 ---
 
-<div id="equipe" class="w-full py-8 bg-rizoma-bege" style="position: relative; z-index: 10;">
+<div id="equipe" class="w-full py-20 md:py-28 bg-rizoma-bege" style="position: relative; z-index: 10;">
   <Container>
-    <Sectionhead>
+    <Sectionhead top={false}>
       <Fragment slot="title">Nossa equipe</Fragment>
       <Fragment slot="desc">Profissionais especializados e experientes trabalhando juntos pelo seu bem-estar.</Fragment>
     </Sectionhead>
 
-    <div class="equipe-grid">
-      <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-4">
+    <div class="mx-auto max-w-4xl mt-14">
+      <!-- One card per professional. The card is the toggle: it opens the
+           matching panel below the grid, so the grid never reflows and only
+           one biography is open at a time. -->
+      <div class="grid gap-6 sm:grid-cols-3">
         {teamMembers.map((member) => (
-          <div class="group" data-member-id={member.id}>
-            <!-- Mobile layout: flex row with smaller image and text on right -->
-            <div class="flex md:hidden gap-4 items-center cursor-pointer team-member-trigger">
-              <div class="w-36 h-36 flex-shrink-0">
-                <Picture
-                  src={member.image}
-                  alt={member.alt}
-                  sizes="144px"
-                  width={144}
-                  height={144}
-                  class="w-full h-full rounded-md transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center"
-                />
-              </div>
-              <div class="flex-1">
-                <h2 class="text-lg font-bold text-gray-900">{member.name}</h2>
-                <h2 class="text-slate-700">{member.title}</h2>
-                <h4 class="text-sm text-slate-600">{member.credentials}</h4>
-              </div>
-            </div>
-
-            <!-- Mobile accordion content -->
-            <div class="team-member-details md:hidden hidden mt-4 p-4 bg-white rounded-lg shadow-lg border-l-4 border-rizoma-green">
-              <div class="space-y-3">
-                {member.details.map((detail) => (
-                  <p class="text-sm leading-relaxed text-slate-800" set:html={detail.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
-                ))}
-              </div>
-              <div class="mt-4 flex justify-end">
-                <button class="text-rizoma-green hover:text-rizoma-green-darker text-sm font-medium close-details">
-                  Fechar detalhes
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <!-- Desktop accordion content - spans full width -->
-      {teamMembers.map((member) => (
-        <div class="team-member-details-desktop hidden md:block hidden mt-8 p-6 bg-white rounded-lg shadow-lg border-l-4 border-rizoma-green mx-auto max-w-4xl" data-member-id={member.id}>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">{member.name} - {member.title}</h3>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
+          <button
+            type="button"
+            class="team-member-trigger group flex w-full items-center gap-4 rounded-2xl bg-white p-4 text-left ring-1 ring-rizoma-green/10 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:flex-col sm:items-stretch sm:gap-0 sm:p-3"
+            data-member-id={member.id}
+            aria-expanded="false"
+            aria-controls={`detalhes-${member.id}`}>
+            <div class="h-28 w-28 shrink-0 overflow-hidden rounded-xl sm:h-auto sm:w-full">
               <Picture
                 src={member.image}
                 alt={member.alt}
-                sizes="(max-width: 800px) 100vw, 300px"
-                width={300}
-                height={300}
-                class="w-full max-w-sm rounded-md bg-white object-cover object-center aspect-square mx-auto"
+                sizes="(max-width: 640px) 112px, 280px"
+                width={280}
+                height={280}
+                class="h-full w-full bg-white object-cover object-center aspect-square"
               />
             </div>
-            <div class="space-y-4">
-              {member.details.map((detail) => (
-                <p class="text-base leading-relaxed text-slate-800" set:html={detail.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
-              ))}
+            <div class="sm:mt-4 sm:px-2 sm:pb-2">
+              <h3 class="text-lg font-bold text-rizoma-green">{member.name}</h3>
+              <p class="text-sm text-slate-600">{member.title} {member.credentials}</p>
+              <span class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-rizoma-green-button">
+                Ver perfil
+                <svg class="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h14M19 12l-6-6M19 12l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
             </div>
+          </button>
+        ))}
+      </div>
+
+      {teamMembers.map((member) => (
+        <div
+          id={`detalhes-${member.id}`}
+          class="team-member-details hidden mt-8 rounded-2xl border-l-4 border-rizoma-green bg-white p-6 shadow-lg md:p-8"
+          data-member-id={member.id}>
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-2xl font-bold text-rizoma-green">
+              {member.name} <span class="font-normal text-slate-500">— {member.title}</span>
+            </h3>
+            <button
+              type="button"
+              class="close-details shrink-0 rounded-full p-1 text-slate-400 transition hover:bg-rizoma-bege hover:text-rizoma-green"
+              aria-label={`Fechar perfil de ${member.name}`}>
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
           </div>
+          <div class="mt-4 space-y-4">
+            {member.details.map((detail) => (
+              <p class="leading-relaxed text-slate-700" set:html={bold(detail)} />
+            ))}
+          </div>
+          {member.profileUrl && (
+            <a
+              href={member.profileUrl}
+              class="mt-6 inline-flex items-center gap-1 font-semibold text-rizoma-green-button hover:underline">
+              Ver página completa
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M19 12l-6-6M19 12l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          )}
         </div>
       ))}
     </div>
-</Container>
+  </Container>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const triggers = document.querySelectorAll('.team-member-trigger');
-  const mobileCloseButtons = document.querySelectorAll('.close-details');
-  const desktopCloseButtons = document.querySelectorAll('.close-details-desktop');
+  document.addEventListener("DOMContentLoaded", () => {
+    const triggers =
+      document.querySelectorAll<HTMLElement>(".team-member-trigger");
+    const panels = document.querySelectorAll<HTMLElement>(".team-member-details");
 
-  triggers.forEach(trigger => {
-    trigger.addEventListener('click', function() {
-      const memberCard = this.closest('[data-member-id]');
-      const memberId = memberCard.getAttribute('data-member-id');
+    const close = (panel: HTMLElement) => {
+      panel.classList.add("hidden");
+      document
+        .querySelector(`.team-member-trigger[data-member-id="${panel.dataset.memberId}"]`)
+        ?.setAttribute("aria-expanded", "false");
+    };
 
-      // For mobile: get the mobile details within the same card
-      const mobileDetails = memberCard.querySelector('.team-member-details');
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const id = trigger.dataset.memberId;
+        const panel = document.querySelector<HTMLElement>(
+          `.team-member-details[data-member-id="${id}"]`
+        );
+        if (!panel) return;
 
-      // For desktop: get the desktop details by matching member ID
-      const desktopDetails = document.querySelector(`.team-member-details-desktop[data-member-id="${memberId}"]`);
+        const willOpen = panel.classList.contains("hidden");
+        panels.forEach(close);
 
-      // Close all other open details first
-      document.querySelectorAll('.team-member-details:not(.hidden)').forEach(openDetail => {
-        if (openDetail !== mobileDetails) {
-          openDetail.classList.add('hidden');
+        if (willOpen) {
+          panel.classList.remove("hidden");
+          trigger.setAttribute("aria-expanded", "true");
         }
       });
+    });
 
-      document.querySelectorAll('.team-member-details-desktop:not(.hidden)').forEach(openDetail => {
-        if (openDetail !== desktopDetails) {
-          openDetail.classList.add('hidden');
-        }
+    document.querySelectorAll(".close-details").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const panel = (button as HTMLElement).closest<HTMLElement>(
+          ".team-member-details"
+        );
+        if (panel) close(panel);
       });
-
-      // Toggle current details based on screen size
-      if (window.innerWidth >= 768) { // md breakpoint
-        desktopDetails.classList.toggle('hidden');
-      } else {
-        mobileDetails.classList.toggle('hidden');
-      }
     });
   });
-
-  // Mobile close buttons
-  mobileCloseButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const details = this.closest('.team-member-details');
-      details.classList.add('hidden');
-    });
-  });
-
-  // Desktop close buttons
-  desktopCloseButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const details = this.closest('.team-member-details-desktop');
-      details.classList.add('hidden');
-    });
-  });
-});
 </script>

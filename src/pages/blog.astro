@@ -19,14 +19,14 @@ publishedBlogEntries.sort(function (a, b) {
 
 <Layout title="Blog">
   <Container>
-    <Sectionhead>
+    <Sectionhead as="h1">
       <Fragment slot="title">Nosso Blog</Fragment>
       <Fragment slot="desc">
         Acompanhe nossos artigos sobre saúde integral,
         bem-estar e as últimas novidades da psicologia.
       </Fragment>
     </Sectionhead>
-    <main class="mt-16 mb-16">
+    <div class="mt-16 mb-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
@@ -44,7 +44,7 @@ publishedBlogEntries.sort(function (a, b) {
                     class="w-full rounded-md object-cover object-center bg-white"
                   />
                   <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                    <span class="text-rizoma-green-lighter uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
                     </span>
 
@@ -75,6 +75,6 @@ publishedBlogEntries.sort(function (a, b) {
           ))
         }
       </ul>
-    </main>
+    </div>
   </Container>
 </Layout>

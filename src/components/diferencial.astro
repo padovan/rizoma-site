@@ -2,6 +2,7 @@
 // @ts-ignore
 import { Icon } from "astro-icon/components";
 import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
 import rizomaLogo from "assets/rizoma-logo-transparent.png";
 
 const etapas = [
@@ -32,10 +33,10 @@ const etapas = [
 ];
 ---
 
-<div id="diferencial" class="w-full py-20 relative overflow-hidden" style="background-color: #ffffff; position: relative; z-index: 10;">
+<div id="diferencial" class="w-full py-20 md:py-28 bg-white relative overflow-hidden" style="position: relative; z-index: 10;">
   <!-- Background logo - only right half visible -->
   <div
-    class="absolute left-0 top-0 h-full w-1/2 bg-no-repeat bg-contain opacity-15 pointer-events-none bg-logo"
+    class="absolute left-0 top-0 h-full w-1/2 bg-no-repeat bg-contain opacity-[0.07] pointer-events-none bg-logo"
     style={`background-image: url(${rizomaLogo.src}); background-position: right top; background-size: 200% auto;`}
   ></div>
 
@@ -47,32 +48,26 @@ const etapas = [
     }
   </style>
 
-  <!-- Fade overlay only on the logo, not affecting text -->
-  <div class="absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-white/30 to-transparent pointer-events-none"></div>
+  <Container>
+    <Sectionhead top={false}>
+      <Fragment slot="title">Nosso diferencial</Fragment>
+      <Fragment slot="desc">O que sustenta cada indicação que fazemos.</Fragment>
+    </Sectionhead>
 
-<Container>
-<div class="mb-16">
-<div>
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Nosso Diferencial
-  </h2>
-</div>
-
-<div class="grid sm:grid-cols-2 md:grid-cols-2 mt-16 gap-16">
-  {
-    etapas.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-rizoma-green rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white bg-rizoma-green" name={item.icon} />
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-900 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
-</div>
-</Container>
+    <div class="relative grid sm:grid-cols-2 mt-14 gap-6 max-w-5xl mx-auto">
+      {
+        etapas.map((item) => (
+          <div class="flex gap-5 items-start rounded-2xl bg-white/80 backdrop-blur-sm p-7 ring-1 ring-rizoma-green/10 shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-rizoma-green">
+              <Icon class="h-5 w-5 text-white" name={item.icon} />
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-rizoma-green">{item.title}</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
 </div>

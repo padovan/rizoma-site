@@ -1,7 +1,30 @@
-<footer class="bg-rizoma-bege py-8" style="position: relative; z-index: 10;">
-  <div class="text-center">
-    <p class="text-xs md:text-sm text-slate-500">
-      Copyright © {new Date().getFullYear()} Instituto Rizoma de Saúde Integral. Todos os direitos reservados.
-    </p>
-  </div>
+---
+import Container from "@components/container.astro";
+import rizomaHorizontalLogo from "assets/rizoma-horizontal.png";
+---
+
+<footer class="bg-rizoma-bege py-10" style="position: relative; z-index: 10;">
+  <Container>
+    <div class="flex flex-col items-center gap-5 text-center">
+      <a href="/" aria-label="Instituto Rizoma de Saúde Integral">
+        <img
+          src={rizomaHorizontalLogo.src}
+          alt="Instituto Rizoma de Saúde Integral - Logotipo"
+          class="h-10 opacity-80 mix-blend-multiply"
+        />
+      </a>
+
+      <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-600">
+        <a class="transition hover:text-rizoma-green" href="/#sobre">Sobre</a>
+        <a class="transition hover:text-rizoma-green" href="/#diferencial">Diferencial</a>
+        <a class="transition hover:text-rizoma-green" href="/#equipe">Equipe</a>
+        <a class="transition hover:text-rizoma-green" href="/blog">Blog</a>
+        <a class="transition hover:text-rizoma-green" href="/#contato">Contato</a>
+      </nav>
+
+      <p class="text-xs md:text-sm text-slate-500">
+        Copyright © {new Date().getFullYear()} Instituto Rizoma de Saúde Integral. Todos os direitos reservados.
+      </p>
+    </div>
+  </Container>
 </footer>

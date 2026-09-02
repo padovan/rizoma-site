@@ -1,77 +1,70 @@
 ---
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+const etapas = [
+  "Escuta inicial",
+  "Análise técnica do caso",
+  "Seleção criteriosa do profissional",
+  "Indicação"
+];
 ---
 
-<div id="sobre" class="w-full py-8 bg-rizoma-bege" style="position: relative; z-index: 10;">
+<div id="sobre" class="w-full py-20 md:py-28 bg-rizoma-bege" style="position: relative; z-index: 10;">
   <Container>
-    <Sectionhead>
+    <Sectionhead top={false}>
       <Fragment slot="title">Sobre nós</Fragment>
       <Fragment slot="desc">A qualidade do tratamento começa na escolha do profissional</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mt-16">
-      <p class="text-lg leading-relaxed text-slate-900">
+    <div class="mx-auto max-w-3xl mt-14">
+      <p class="text-lg leading-relaxed text-slate-700">
         Somos um instituto especializado em encaminhamento clínico para psicólogos(as). Atuamos como ponte qualificada entre pacientes e profissionais, assegurando que cada caso seja direcionado ao especialista mais indicado.
       </p>
+    </div>
 
-      <!-- Flow chart -->
-      <div class="my-10">
-        <!-- Desktop: horizontal -->
-        <div class="hidden md:flex items-center justify-center gap-0">
-          <div class="bg-rizoma-green text-white rounded-xl px-5 py-4 text-center font-semibold text-sm min-w-[160px] shadow-md">
-            Escuta inicial
-          </div>
-          <svg class="w-10 h-10 text-rizoma-green shrink-0" viewBox="0 0 40 40" fill="none">
-            <path d="M10 20H30M30 20L22 12M30 20L22 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bg-rizoma-green text-white rounded-xl px-5 py-4 text-center font-semibold text-sm min-w-[160px] shadow-md">
-            Análise técnica do caso
-          </div>
-          <svg class="w-10 h-10 text-rizoma-green shrink-0" viewBox="0 0 40 40" fill="none">
-            <path d="M10 20H30M30 20L22 12M30 20L22 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bg-rizoma-green text-white rounded-xl px-5 py-4 text-center font-semibold text-sm min-w-[160px] shadow-md">
-            Seleção criteriosa do profissional
-          </div>
-          <svg class="w-10 h-10 text-rizoma-green shrink-0" viewBox="0 0 40 40" fill="none">
-            <path d="M10 20H30M30 20L22 12M30 20L22 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bg-rizoma-green-button text-white rounded-xl px-5 py-4 text-center font-bold text-sm min-w-[160px] shadow-md ring-2 ring-rizoma-green-button/30 ring-offset-2">
-            Indicação
-          </div>
-        </div>
+    <!-- How a referral is made, from first contact to indication. Numbered so
+         the order survives the wrap to a vertical stack on small screens. -->
+    <ol class="mx-auto mt-14 flex max-w-4xl flex-col gap-8 md:flex-row md:gap-6">
+      {etapas.map((etapa, i) => {
+        const last = i === etapas.length - 1;
+        return (
+          <li class="relative flex-1">
+            <div
+              class:list={[
+                "flex h-full flex-col items-center justify-center gap-2 rounded-2xl px-5 py-6 text-center shadow-sm transition",
+                last
+                  ? "bg-rizoma-green-button text-white shadow-md ring-1 ring-rizoma-green-button/30"
+                  : "bg-white text-rizoma-green ring-1 ring-rizoma-green/10"
+              ]}>
+              <span
+                class:list={[
+                  "flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold",
+                  last ? "bg-white/20 text-white" : "bg-rizoma-bege text-rizoma-green"
+                ]}>
+                {i + 1}
+              </span>
+              <span class="text-sm font-semibold leading-snug">{etapa}</span>
+            </div>
+            {!last && (
+              <span
+                aria-hidden="true"
+                class="pointer-events-none absolute left-1/2 top-full z-10 flex h-8 -translate-x-1/2 items-center text-rizoma-green-lighter md:left-full md:top-1/2 md:h-auto md:-translate-y-1/2">
+                <svg class="h-6 w-6 rotate-90 md:rotate-0" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M19 12l-6-6M19 12l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            )}
+          </li>
+        );
+      })}
+    </ol>
 
-        <!-- Mobile: vertical -->
-        <div class="flex md:hidden flex-col items-center gap-0">
-          <div class="bg-rizoma-green text-white rounded-xl px-6 py-4 text-center font-semibold text-sm w-full max-w-[280px] shadow-md">
-            Escuta inicial
-          </div>
-          <svg class="w-8 h-8 text-rizoma-green shrink-0" viewBox="0 0 32 32" fill="none">
-            <path d="M16 6V26M16 26L8 18M16 26L24 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bg-rizoma-green text-white rounded-xl px-6 py-4 text-center font-semibold text-sm w-full max-w-[280px] shadow-md">
-            Análise técnica do caso
-          </div>
-          <svg class="w-8 h-8 text-rizoma-green shrink-0" viewBox="0 0 32 32" fill="none">
-            <path d="M16 6V26M16 26L8 18M16 26L24 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bg-rizoma-green text-white rounded-xl px-6 py-4 text-center font-semibold text-sm w-full max-w-[280px] shadow-md">
-            Seleção criteriosa do profissional
-          </div>
-          <svg class="w-8 h-8 text-rizoma-green shrink-0" viewBox="0 0 32 32" fill="none">
-            <path d="M16 6V26M16 26L8 18M16 26L24 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="bg-rizoma-green-button text-white rounded-xl px-6 py-4 text-center font-bold text-sm w-full max-w-[280px] shadow-md ring-2 ring-rizoma-green-button/30 ring-offset-2">
-            Indicação
-          </div>
-        </div>
-      </div>
-
-      <p class="text-lg leading-relaxed text-slate-900">
+    <div class="mx-auto max-w-3xl mt-16 flex flex-col gap-5">
+      <p class="text-lg leading-relaxed text-slate-700">
         Entendemos que saúde mental não é um campo padronizado. Diferentes demandas exigem diferentes formações, abordagens teóricas e experiências clínicas. Nosso papel é analisar cuidadosamente cada situação e orientar o encaminhamento com base em critérios técnicos e científicos.
       </p>
-      <p class="text-lg leading-relaxed text-slate-900">
+      <p class="text-xl font-semibold leading-relaxed text-rizoma-green">
         Nosso compromisso é com a qualidade do cuidado.
       </p>
     </div>

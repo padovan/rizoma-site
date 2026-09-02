@@ -118,9 +118,9 @@ const makeTitle = title
     }
     </script>
   </head>
-  <body class="text-primaryText bg-background pt-20">
+  <body class="text-primaryText bg-background pt-20 min-h-screen flex flex-col">
     <Navbar />
-    <slot />
+    <main class="flex-1"><slot /></main>
     <Footer />
     <WhatsappFloat />
     <style is:global>

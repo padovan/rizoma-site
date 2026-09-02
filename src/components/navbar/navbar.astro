@@ -34,7 +34,7 @@ const menuitems = [
 ];
 ---
 
-<div class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-rizoma-bege-stronger shadow-sm z-50">
 <Container>
   <header class="flex flex-col lg:flex-row justify-between items-center py-3">
     <Astronav closeOnClick={true}>
@@ -43,11 +43,11 @@ const menuitems = [
           <img src={rizomaHorizontalLogo.src} alt="Instituto Rizoma de Saúde Integral - Logotipo" class="h-12" />
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-6 h-6 text-rizoma-green" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 astronav-items">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
+        <ul class="flex flex-col gap-1 pb-3 lg:flex-row lg:gap-2 lg:pb-0">
           {
             menuitems.map((item, index) => (
               <>
@@ -63,7 +63,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center font-medium text-slate-600 transition-colors hover:text-rizoma-green">
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">

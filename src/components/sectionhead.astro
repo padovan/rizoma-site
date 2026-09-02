@@ -1,12 +1,23 @@
 ---
-const { align = "center" } = Astro.props;
+interface Props {
+  align?: "center" | "left";
+  /** Heading level: `h1` when this is the page's own title, `h2` in a section. */
+  as?: "h1" | "h2";
+  /** Top margin, for pages that drop a heading straight under the navbar. */
+  top?: boolean;
+  class?: string;
+  [x: string]: any;
+}
+
+const { align = "center", as: Tag = "h2", top = true, class: className } = Astro.props;
 ---
 
-<div class:list={["mt-16", align === "center" && "text-center"]}>
-  <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+<div class:list={[top && "mt-16", align === "center" && "text-center", className]}>
+  <Tag class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-rizoma-green">
     <slot name="title">Title</slot>
-  </h1>
-  <p class="text-lg mt-4 text-slate-600">
+  </Tag>
+  <div class:list={["mt-5 h-px w-24 bg-rizoma-green-lighter/40", align === "center" && "mx-auto"]}></div>
+  <p class:list={["text-lg mt-5 text-slate-600 leading-relaxed max-w-2xl", align === "center" && "mx-auto"]}>
     <slot name="desc">Some description goes here</slot>
   </p>
 </div>
