@@ -25,7 +25,7 @@ const { whatsappMessage } = Astro.props;
                 AGENDAR SESSÃO
           </a>
         </div>
-        <div class="grid md:grid-cols-2 gap-10 mt-8 max-w-2xl mx-auto">
+        <div class="mt-8 max-w-2xl mx-auto">
           <div class="text-center">
             <h3 class="text-xl font-semibold text-white mb-4">Contato</h3>
             <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
@@ -34,13 +34,7 @@ const { whatsappMessage } = Astro.props;
             </div>
             <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
               <Icon class="text-white/70 w-4 h-4" name="uil:phone" />
-              <a href="tel:+55 11 975722701">(11) 97572 2701</a>
-            </div>
-          </div>
-          <div class="text-center">
-            <h3 class="text-xl font-semibold text-white mb-4">Endereço</h3>
-            <div class="flex items-center justify-center mt-2 space-x-2 text-white/90">
-              <span>R. Maria Ferreira Antunes, 26<br>Barão Geraldo - Campinas, SP<br>CEP: 13084-180</span>
+              <a href={`tel:+${SITE_CONFIG.WHATSAPP_PHONE}`}>(19) 99639-5866</a>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 # Instituto Rizoma Website - Claude Code Documentation
 
 ## Project Overview
-This is an Astro-based website for Instituto Rizoma de Saúde Integral, a mental health clinic in Campinas, SP, Brazil. The site features a modern design with therapeutic group services, professional pages, and integrated WhatsApp contact functionality.
+This is an Astro-based website for Instituto Rizoma de Saúde Integral, an online mental health service in Brazil. The site features a modern design with therapeutic group services, professional pages, and integrated WhatsApp contact functionality.
 
 ## Key Technologies
 - **Framework**: Astro 4.x with SSG (Static Site Generation)
@@ -118,7 +118,6 @@ pnpm lint
 ## Contact Information
 - **Phone**: (19) 99639-5866
 - **Email**: institutorizomasi@gmail.com
-- **Address**: R. Maria Ferreira Antunes, 26, Barão Geraldo - Campinas, SP, CEP: 13084-180
 
 ## Analytics & Tracking
 - Google Analytics ID: `AW-964101777`

@@ -72,7 +72,7 @@ const makeTitle = title
           alt: "Instituto Rizoma de Saúde Integral - Cuidado multidisciplinar em saúde mental",
         },
         optional: {
-          description: "Instituto Rizoma oferece atendimento em psicologia, psiquiatria, grupos terapêuticos e medicina de família com foco no cuidado humanizado e personalizado em Campinas, SP.",
+          description: "Instituto Rizoma oferece atendimento online em psicologia e grupos terapêuticos com foco no cuidado humanizado e personalizado.",
           locale: "pt_BR",
           siteName: "Instituto Rizoma de Saúde Integral"
         }
@@ -85,35 +85,16 @@ const makeTitle = title
       "@context": "https://schema.org",
       "@type": "MedicalOrganization",
       "name": "Instituto Rizoma de Saúde Integral",
-      "description": "Instituto de saúde mental oferecendo cuidado multidisciplinar com psicologia, psiquiatria e medicina de família",
+      "description": "Instituto de saúde mental oferecendo atendimento online em psicologia e grupos terapêuticos",
       "url": "https://institutorizoma.github.io",
       "logo": "https://institutorizoma.github.io/src/assets/rizoma-horizontal.png",
       "image": "https://institutorizoma.github.io/src/assets/rizoma-logo.png",
       "telephone": "+55-19-99639-5866",
       "email": "institutorizomasi@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Maria Ferreira Antunes, 26",
-        "addressLocality": "Campinas",
-        "addressRegion": "SP",
-        "postalCode": "13084-180",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-22.8649",
-        "longitude": "-47.0739"
-      },
       "openingHours": "Mo-Fr 08:00-18:00",
       "medicalSpecialty": [
-        "Psychology",
-        "Psychiatry",
-        "Family Medicine"
+        "Psychology"
       ],
-      "serviceArea": {
-        "@type": "City",
-        "name": "Campinas"
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Serviços de Saúde Mental",
@@ -129,21 +110,7 @@ const makeTitle = title
             "@type": "Offer",
             "itemOffered": {
               "@type": "MedicalTherapy",
-              "name": "Avaliação Psiquiátrica"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalTherapy",
               "name": "Grupos Terapêuticos"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "MedicalTherapy",
-              "name": "Medicina de Família"
             }
           }
         ]

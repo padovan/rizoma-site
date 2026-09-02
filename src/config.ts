@@ -14,30 +14,14 @@ export const SITE_CONFIG = {
   // Company Information
   COMPANY_NAME: "Instituto Rizoma de Saúde Integral",
 
-  // Address
-  ADDRESS: {
-    street: "R. Maria Ferreira Antunes, 26",
-    city: "Campinas",
-    state: "SP",
-    zipCode: "13084-180",
-    country: "BR",
-    neighborhood: "Barão Geraldo"
-  },
-
-  // Geolocation
-  GEO: {
-    latitude: "-22.8649",
-    longitude: "-47.0739"
-  },
-
   // Business Hours
   OPENING_HOURS: "Mo-Fr 08:00-18:00",
 
   // SEO
   DEFAULT_META: {
     title: "Instituto Rizoma de Saúde Integral",
-    description: "Instituto Rizoma de Saúde Integral oferece cuidado multidisciplinar em saúde mental com psicologia, psiquiatria, grupos terapêuticos e medicina de família em Campinas. Atendimento humanizado e personalizado.",
-    keywords: "psicologia campinas, psiquiatria campinas, grupos terapeuticos campinas, medicina família campinas, saúde mental, terapia, atendimento psicológico, instituto rizoma"
+    description: "Instituto Rizoma de Saúde Integral oferece cuidado em saúde mental com psicologia e grupos terapêuticos. Atendimento online, humanizado e personalizado.",
+    keywords: "psicologia online, grupos terapeuticos online, saúde mental, terapia, atendimento psicológico, instituto rizoma"
   }
 } as const;
 

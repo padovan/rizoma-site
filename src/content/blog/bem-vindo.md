@@ -9,14 +9,14 @@ image: {
 publishDate: "2025-09-25 15:39"
 category: "Saúde Mental"
 author: "Instituto Rizoma"
-tags: [saúde mental, psicologia, psiquiatria, terapia, cuidado integral]
+tags: [saúde mental, psicologia, terapia, cuidado integral]
 ---
 
 ## Quem Somos
 
 O Instituto Rizoma de Saúde Integral é um espaço dedicado ao acolhimento e cuidado em saúde mental, com foco em um atendimento ético, qualificado e baseado em evidências científicas. Acreditamos na importância de integrar diferentes saberes para proporcionar um cuidado realmente abrangente e ajustado às necessidades de cada pessoa. Para isso, contamos com uma rede de profissionais especializados e com experiências diversas que articulam suas  práticas em prol de uma visão integral do ser humano.
 
-Contamos com uma equipe multidisciplinar composta por profissionais de psicologia, psiquiatria, medicina de família e outras especialidades parceiras que trabalham de forma conjunta para garantir o cuidado atento, constante e humanizado. 
+Contamos com uma equipe multidisciplinar composta por profissionais de psicologia e outras especialidades parceiras que trabalham de forma conjunta para garantir o cuidado atento, constante e humanizado. 
 Oferecemos atendimentos individuais e em grupo, tanto presenciais quanto online, respeitando sempre as preferências e necessidades de cada pessoa. Entre os dispositivos clínicos que utilizamos estão a arteterapia (grupo de rabiscos), grupos terapêuticos e temáticos, medicina e terapia psicodélica, análise psicanalítica, entre outras abordagens. Nosso objetivo é proporcionar um ambiente acolhedor e seguro, onde cada pessoa possa encontrar caminhos e construir autonomia para o seu desenvolvimento pessoal.
 Nosso compromisso é, além de cuidar com excelência daqueles que nos procuram, contribuir para a pesquisa, formação e qualificação do campo da saúde mental. Para isso, são organizadas palestras, workshops, cursos e supervisões clínicas para quem deseja aprofundar seus conhecimentos e práticas em saúde mental.
 
@@ -28,7 +28,7 @@ O Instituto Rizoma de Saúde Integral une ciência, cuidado e humanidade para ap
 
 Oferecemos cuidado integral em saúde mental priorizando o acolhimento e a autonomia do indivíduo.
 
-Nossos serviços incluem grupos terapêuticos e temáticos, psicoterapia individual, avaliação clínica e intervenção psiquiátrica para pessoas a partir dos 15 anos de idade.
+Nossos serviços incluem grupos terapêuticos e temáticos, psicoterapia individual e avaliação clínica para pessoas a partir dos 15 anos de idade.
 
 Nosso objetivo é desenvolver um plano terapêutico abrangente para cada paciente, focado no bem-estar e no desenvolvimento pessoal. 
 
@@ -37,7 +37,7 @@ Nosso objetivo é desenvolver um plano terapêutico abrangente para cada pacient
 Cada profissional do Instituto trabalha a partir de uma perspectiva teórica diferente, porém, com o consenso na compreensão sobre o que entendemos por saúde mental de qualidade.
 
 Além dos atendimentos individuais, trabalhamos com grupos terapêuticos e de acolhimento às famílias dos que nos procuram.
-Quando recebemos alguém, marcamos uma conversa para entender como podemos te ajudar com nossos serviços. Demonstramos nossa metodologia de trabalho integral e junto à perspectiva da medicina de família montamos um plano de tratamento individual que pode contemplar profissionais de nossa rede e participações em grupos do Instituto.
+Quando recebemos alguém, marcamos uma conversa para entender como podemos te ajudar com nossos serviços. Demonstramos nossa metodologia de trabalho integral e montamos um plano de tratamento individual que pode contemplar profissionais de nossa rede e participações em grupos do Instituto.
 
 A partir dessa avaliação, iremos construir em equipe um plano de saúde ampliado e singular com objetivos a médio e longo prazo para alcançar o bem-estar e a autonomia de cada paciente.
 

@@ -33,16 +33,15 @@ const makeTitle = title + " | " + "Instituto Rizoma";
 
 // SEO-optimized description
 const seoDescription = description ||
-  `${professional.name} - ${professional.title} ${professional.credentials}. ${professional.specialties.join(", ")} em Campinas. Agende sua consulta no Instituto Rizoma de Saúde Integral.`;
+  `${professional.name} - ${professional.title} ${professional.credentials}. ${professional.specialties.join(", ")}. Atendimento online. Agende sua consulta no Instituto Rizoma de Saúde Integral.`;
 
 // SEO keywords combining professional info with general terms
 const seoKeywords = [
   professional.name.toLowerCase().replace(/\s+/g, " "),
   professional.title.toLowerCase(),
   ...professional.specialties.map(s => s.toLowerCase()),
-  "campinas",
-  "barao geraldo",
-  "terapia campinas",
+  "terapia online",
+  "psicologo online",
   "saude mental",
   "instituto rizoma",
   ...keywords
@@ -62,20 +61,12 @@ const professionalStructuredData = {
   "worksFor": {
     "@type": "MedicalOrganization",
     "name": "Instituto Rizoma de Saúde Integral",
-    "url": "https://institutorizoma.com.br",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "R. Maria Ferreira Antunes, 26",
-      "addressLocality": "Campinas",
-      "addressRegion": "SP",
-      "postalCode": "13084-180",
-      "addressCountry": "BR"
-    }
+    "url": "https://institutorizoma.com.br"
   },
   "speciality": professional.specialties,
   "areaServed": {
-    "@type": "City",
-    "name": "Campinas"
+    "@type": "Country",
+    "name": "Brasil"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
