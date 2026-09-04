@@ -20,7 +20,7 @@ module.exports = {
         'rizoma-bege-stronger' : "#f5e6d3",
         'rizoma-green': '#1e3322',
         'rizoma-green-lighter': '#618e81',
-        'rizoma-green-button': '#0b937cff',
+        'rizoma-green-button': '#0a7a66',
       },
     },
   },

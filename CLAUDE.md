@@ -15,7 +15,7 @@ This is an Astro-based website for Instituto Rizoma de Saúde Integral, an onlin
 src/
 ├── components/
 │   ├── contato.astro          # Contact section component
-│   ├── equipe.astro           # Team member grid
+│   ├── fundadores.astro       # Founders grid
 │   ├── footer.astro           # Site footer
 │   ├── hero.astro             # Homepage hero with banner
 │   ├── whatsapp-float.astro   # Floating WhatsApp button
@@ -43,7 +43,7 @@ src/
 'rizoma-bege-stronger': '#f5e6d3'  // Stronger beige for hover states
 'rizoma-green': '#1e3322'          // Dark green for text/headers
 'rizoma-green-lighter': '#618e81'  // Medium green for sections
-'rizoma-green-button': '#0b937cff' // Green for buttons
+'rizoma-green-button': '#0a7a66'   // Green for buttons (5.27:1 on white, WCAG AA)
 ```
 
 ## Key Features
