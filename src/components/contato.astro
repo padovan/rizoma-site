@@ -1,29 +1,15 @@
 ---
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon/components";
-import { SITE_CONFIG, whatsappHelpers } from "@/config";
-
-export interface Props {
-  whatsappMessage?: string;
-}
-
-const { whatsappMessage } = Astro.props;
-
-const whatsappUrl = whatsappHelpers.getWhatsappUrl(
-  whatsappMessage ??
-    "Olá. Gostaria de mais informações sobre os serviços do Instituto Rizoma."
-);
+import { SITE_CONFIG } from "@/config";
 ---
 
 <div id="contato" class="w-full py-20 md:py-24 bg-rizoma-green-lighter" style="position: relative; z-index: 10;">
   <Container>
     <div class="mx-auto max-w-2xl text-center">
       <h2 class="text-3xl md:text-4xl font-bold leading-tight text-white">
-        Agende uma consulta ou tire suas dúvidas com nossa equipe.
+        Saiba como podemos te ajudar
       </h2>
-      <p class="mt-4 text-lg text-white/85">
-        Estamos aqui pra te ajudar.
-      </p>
 
       <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
@@ -31,15 +17,7 @@ const whatsappUrl = whatsappHelpers.getWhatsappUrl(
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-lg font-semibold text-rizoma-green shadow-md transition hover:bg-rizoma-bege sm:w-auto">
-          Agendar sessão
-        </a>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-white/70 px-7 py-3.5 text-lg font-semibold text-white transition hover:bg-white/10 sm:w-auto">
-          <Icon class="h-5 w-5" name="bx:bxl-whatsapp" />
-          WhatsApp
+          Comece aqui
         </a>
       </div>
 
